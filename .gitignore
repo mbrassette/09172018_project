@@ -1,0 +1,10 @@
+bin
+obj
+packages
+*.suo
+*.user
+.vs
+
+npm-debug.log
+build.js
+node_modules
