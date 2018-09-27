@@ -3,10 +3,10 @@
 	<head>
 		<title>Front End Interview</title>
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
-
+		<link rel="stylesheet" href="index.css" />
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />		
 	</head>
 	<body>
 		<header class="jumbotron">
@@ -18,7 +18,19 @@
 		<main id="app" class="container">
 			Loading...
 		</main>
+		<p id="errormessage" class="center"></p> 
+		<form id="form-id">
+			Item:<br>
+			<input type="text" id="ItemText">
+			<br>
+			Price:<br>
+			<input type="text" id="PriceText">
+			<br><br>
+			<button class="btn" onclick="AddNew()">Add New</button>
+		</form>				
 
 		<script src="/bundle/build.js"></script>
+		<script src="accounting.min.js"></script>
+		<script src="index.js"></script>
 	</body>
 </html>

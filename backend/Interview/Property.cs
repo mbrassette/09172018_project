@@ -4,7 +4,7 @@ namespace Archon.Interview
 {
 	public class Property
 	{
-		public string AccountNumber { get; private set; }
+        public string AccountNumber { get; private set; }
 		public string Address1 { get; private set; }
 		public string Address2 { get; private set; }
 
@@ -13,18 +13,18 @@ namespace Archon.Interview
 		/// </summary>
 		public bool IsApartment
 		{
-			get { return true; }
+			get { return !string.IsNullOrEmpty(Address2.Trim()); }
 		}
 
-		/// <summary>
-		/// Gets the municipal district that the property is located in
-		/// </summary>
-		public char District
-		{
-			get { return '\0'; }
-		}
+        /// <summary>
+        /// Gets the municipal district that the property is located in
+        /// </summary>
+        public char District
+        {
+            get { return AccountNumber.ToCharArray()[0]; }
+        }
 
-		public Property(string accountNumber, string address1, string address2)
+        public Property(string accountNumber, string address1, string address2)
 		{
 			if (string.IsNullOrEmpty(accountNumber))
 				throw new ArgumentNullException("accountNumber", "Account number is required");
@@ -39,8 +39,11 @@ namespace Archon.Interview
 		/// </summary>
 		public bool IsOnStreet(string streetName)
 		{
-			// TODO: Implement method
-			throw new NotImplementedException();
+            if (streetName == null)
+                throw new ArgumentException("streetName", "Street name is null.");
+            if (streetName.Trim() == "")
+                throw new ArgumentException("streetName", "Street name is empty.");
+            return Address1.ToLower().Contains(streetName.Trim().ToLower());
 		}
 	}
 }

@@ -1,0 +1,21 @@
+td, th {
+	border: 1px solid black;
+}
+
+#errormessage {
+	color: red;
+	font-weight: bold;
+	padding-top: 10px;					
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+	border: 1px solid black;
+}
+
+form, th, .center {
+	text-align: center;
+}					
+
+.right {
+	text-align: right
+}
